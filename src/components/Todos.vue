@@ -1,25 +1,55 @@
 <template>
   <div>
-    <div v-for="todo in todos" :key="todo.title">
+    <div v-for="(todo, index) in todos" :key="todo.title" v-if="visibility === 'all' ">
       <b-field class="is-pulled-left">
-        <b-checkbox size="is-large">{{ todo.title }}</b-checkbox>
+        <b-checkbox size="is-large" @input="usecompleted({index, value: $event})" :values="todo.completed">
+          <strike v-if="todo.completed">{{todo.title}}</strike>
+          <div v-else>{{ todo.title }} </div>
+        </b-checkbox>
       </b-field>
-      <a class="delete is-pulled-right" @click="removeTodo(index)"></a>
+      <a class="delete is-pulled-right" @click="deleteTodo(index)"></a>
+      <div class="is-clearfix"></div>
+    </div>
+
+    <div v-for="(todo, index) in todos" :key="todo.title" v-if="visibility === 'active' ">
+      <div v-if="todo.completed === false">
+      <b-field class="is-pulled-left">
+        <b-checkbox size="is-large" @input="usecompleted({index, value: $event})">
+          <strike v-if="todo.completed">{{todo.title}}</strike>
+          <div v-else>{{ todo.title }} </div>
+        </b-checkbox>
+      </b-field>
+      <a class="delete is-pulled-right" @click="deleteTodo(index)"></a>
       <div class="is-clearfix"></div>
     </div>
   </div>
+
+<div v-for="(todo, index) in todos" :key="todo.title" v-if="visibility === 'completed' ">
+    <div v-if="todo.completed === false">
+      <b-field class="is-pulled-left">
+        <b-checkbox size="is-large" @input="usecompleted({index, value: $event})" :values="true">
+          <strike v-if="todo.completed">{{todo.title}}</strike>
+          <div v-else>{{ todo.title }} </div>
+        </b-checkbox>
+      </b-field>
+      <a class="delete is-pulled-right" @click="deleteTodo(index)"></a>
+      <div class="is-clearfix"></div>
+    </div>
+  </div>
+
+  </div>
+  
 </template>
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
 
-
 export default {
   computed: {
-    ...mapGetters(['todos'])
+    ...mapGetters(['todos', 'visibility'])
   },
   methods: {
-    ...mapActions(['removeTodo'])
+    ...mapActions(['deleteTodo', 'usecompleted'])
   }
 }
 </script>

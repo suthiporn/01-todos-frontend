@@ -40,8 +40,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 * [x] ตัวอย่าง ที่ทำเสร็จแล้ว
 * [x] Challenge 1
-* [ ] Challenge 2
-* [ ] Challenge 3
+* [x] Challenge 2
+* [x] Challenge 3
 * [ ] Challenge 4
 * [ ] Challenge 5
 * [ ] Challenge 6

@@ -3,15 +3,15 @@
     <b-field class="is-pulled-right">
       <b-radio-button v-model="visibility"
         native-value="all">
-        <span>All {{countAll}}</span>
+        <span>All ({{CountAll}})</span>
       </b-radio-button>
       <b-radio-button v-model="visibility"
         native-value="active">
-        <span>Active {{countActive}}</span>
+        <span>Active ({{CountActive}})</span>
       </b-radio-button>
       <b-radio-button v-model="visibility"
         native-value="completed">
-        <span>Completed </span>
+        <span>Completed ({{CountCompleted}})</span>
       </b-radio-button>
     </b-field>
   </div>
@@ -31,13 +31,13 @@ export default {
         store.dispatch('changeVisibility', newValue)
       }
     },
-    contAll () {
+    CountAll () {
       return this.todos.length
     },
-    countActive () {
+    CountActive () {
       return this.todos.filter((todo) => todo.completed === false).length
     },
-    countCompleted () {
+    CountCompleted () {
       return this.todos.filter((todo) => todo.completed === true).length
     }
   }

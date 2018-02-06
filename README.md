@@ -38,7 +38,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 เนื่องจากโปรแกรมนี้ยังทำงานได้ไม่สมบูรณ์ จึงอยากให้มาช่วยกันแก้ไขและเพิ่ม Features ตาม [issues](https://github.com/AdvWebDevelopment/01-todos-frontend/issues) ต่อไปนี้ให้สมบูรณ์ โดยการ Fork โปรเจคนี้ไปเป็นของตัวเอง และทำการแก้ไขตาม [issues](https://github.com/AdvWebDevelopment/01-todos-frontend/issues) ที่มีให้เรียบร้อย ซึ่งถ้ามองว่ายังมีจุดไหนที่ยังสามารถปรับปรุงได้อีก ให้มาเปิด issue ใหม่เพิ่มได้เลย
 
-และหลังจากที่ทำ Issue ไหนเสร็จแล้วให้มากแก้ที่ ไฟล์นี้ ด้วย(README.md) 
+และหลังจากที่ทำ Issue ไหนเสร็จแล้วให้มากแก้ที่ ไฟล์นี้ ด้วย(README.md)
 
 * [x] ตัวอย่าง ที่ทำเสร็จแล้ว
 * [x] Challenge 1
@@ -48,6 +48,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 * [x] Challenge 5
 * [x] Challenge 6
 * [x] Challenge 7
-* [ ] Challenge 8
+* [x] Challenge 8
+* [x] Challenge 9
 
 ถ้ามีข้อสงสัยหรือติดปัญหาสามารถเปิด Issue ขึ้นมาใหม่ได้เลย

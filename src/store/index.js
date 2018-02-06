@@ -31,6 +31,18 @@ export const store = new Vuex.Store({
           state.todos.splice(i, 1)
         }
       }
+    },
+    SORT_ABLES (state, value) {
+      state.todos.splice(value.newIndex, 0, state.todos.splice(value.oldIndex, 1)[0])
+    },
+    SAVE_STORAGE (state, value) {
+      localStorage.setItem('todos', JSON.stringify(value))
+    },
+    GET_STORAGE (state) {
+      let todos = localStorage.getItem('todos')
+      if (todos) {
+        state.todos = JSON.parse(todos)
+      }
     }
   },
   actions: {
@@ -48,6 +60,15 @@ export const store = new Vuex.Store({
     },
     clearComplete ({commit}) {
       commit('CLEAR_COMPLETE')
+    },
+    Sortables ({commit}, value) {
+      commit('SORT_ABLES', value)
+    },
+    saveStorage ({commit}, val) {
+      commit('SAVE_STORAGE', val)
+    },
+    getStorage ({commit}) {
+      commit('GET_STORAGE')
     }
   },
   getters: {

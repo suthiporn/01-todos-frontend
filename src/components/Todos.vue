@@ -11,7 +11,6 @@
       <div class="is-clearfix"></div>
     </div>
 
-
     <div v-for="(todo, index) in todos" :key="todo.title" v-if="visibility === 'active' ">
       <div v-if="todo.completed === false">
       <b-field class="is-pulled-left handle">

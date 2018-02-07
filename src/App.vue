@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 import TodosApp from '@/components/TodosApp'
 import { mapActions } from 'vuex'
 
